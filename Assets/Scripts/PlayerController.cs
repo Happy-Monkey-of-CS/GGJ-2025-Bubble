@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float speed_energy = 2.0f;   // 用一次空格耗能
     public float max_energy = 50f;      // 能量槽大小
 
-    public MusicManager music;
+    MusicManager music;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private float GetDirection(){
         float result = 0;
-        if(music.IsOnBeat() || Input.GetKey(KeyCode.Space)){
+        if(direction == 0 && (music.IsOnBeat() || Input.GetKey(KeyCode.Space))){
             if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)){
                 result = 5;
             }
