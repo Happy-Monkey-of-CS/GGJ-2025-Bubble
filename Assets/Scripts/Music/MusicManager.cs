@@ -28,7 +28,8 @@ public class MusicManager : MonoBehaviour
         try
         {
             GameObject go = Resources.Load<GameObject>($"music/{name}");
-            Music m = Instantiate(go).GetComponent<Music>();
+            Music m = Instantiate(go,transform).GetComponent<Music>();
+            m.gameObject.transform.localPosition=Vector3.zero;
             music = m;
         }
         catch (Exception e)
