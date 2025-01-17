@@ -6,7 +6,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     // µ¥Àý
-    public MusicManager Instance { get; private set; }
+    public static MusicManager Instance { get; private set; }
     public MusicManager()
     {
         if (Instance != null)
