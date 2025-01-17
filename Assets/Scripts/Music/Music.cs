@@ -34,10 +34,16 @@ public class Music : MonoBehaviour
         int intBeat = Mathf.RoundToInt(currentBeat);
         if (Mathf.Abs(currentBeat-intBeat)<error&& intBeat % beatCount == 0&&intBeat!=lastSuccessBeat)
         {
-            lastSuccessBeat = intBeat;
             return true;
         }
         return false;
+    }
+
+    public void FinishedBeat(){
+        float elapsedTime = audioSource.time - offset;
+        float currentBeat = elapsedTime * bpm / 60;
+        int intBeat = Mathf.RoundToInt(currentBeat);
+        lastSuccessBeat = intBeat;
     }
 
     void Start()
@@ -91,7 +97,8 @@ public class Music : MonoBehaviour
                 }
             }
         }
-        if(Input.GetKeyDown(KeyCode.Space)&& IsOnBeat()){
+        if(IsOnBeat()&&Input.GetKeyDown(KeyCode.Space) ){
+            FinishedBeat();
             Debug.Log(1);
         }
     }

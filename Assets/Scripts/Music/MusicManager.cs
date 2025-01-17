@@ -46,6 +46,11 @@ public class MusicManager : MonoBehaviour
         return music.IsOnBeat();
     }
 
+    // 设置当前拍子为已完成的拍子
+    public void FinishedBeat(){
+        music.FinishedBeat();
+    }
+
     public string StartMusicName="NewYear";
 
     //private
