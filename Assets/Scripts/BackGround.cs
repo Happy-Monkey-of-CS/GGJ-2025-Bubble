@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackGround : MonoBehaviour
 {
-    public Transform fwd,bkwd;
+    public Transform bg;
 public Transform player;
 
     public Color color;
@@ -12,6 +12,8 @@ public Transform player;
     void OnEnable()
     {
         Camera.main.backgroundColor=color;
+        Vector3 targetPos = player.position  *0.1f;
+        bg.position = targetPos;
     }
 
     public float smoothTime;
@@ -23,6 +25,6 @@ public Transform player;
 
         Vector3 targetPos = player.position  *0.1f;
 
-        bkwd.position = Vector3.SmoothDamp(bkwd.position, targetPos, ref velocity, smoothTime);
+        bg.position = Vector3.SmoothDamp(bg.position, targetPos, ref velocity, smoothTime);
     }
 }
