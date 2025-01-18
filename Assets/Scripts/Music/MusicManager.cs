@@ -35,6 +35,8 @@ public class MusicManager : MonoBehaviour
             Music m = Instantiate(go, transform).GetComponent<Music>();
             m.gameObject.transform.localPosition = Vector3.zero;
             music = m;
+
+            OnChange?.Invoke(name);
         }
         catch (Exception e)
         {
@@ -60,6 +62,8 @@ public class MusicManager : MonoBehaviour
 
     public string StartMusicName = "NewYear";
 
+    public Action<string> OnChange;
+
     //private
     private void Awake()
     {
@@ -69,7 +73,7 @@ public class MusicManager : MonoBehaviour
         nowPlaying = StartMusicName;
     }
 
-    string nowPlaying = "";
+    public string nowPlaying{get;private set;}= "";
     int lastSecond = 0;
 
     private void Update()

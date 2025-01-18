@@ -37,7 +37,7 @@ public class DropEnemy : Enemy
                 transform.localScale = Vector3.one * (Mathf.Cos(Mathf.PI * timmer) / (1f + Mathf.Pow(timmer, 3)) / 2 + 1);
                 foreach (var s in sprites)
                 {
-                    s.color = new(0.2f+timmer/0.5f*0.8f , 0.2f+timmer/0.5f*0.8f ,0.2f+timmer/0.5f*0.8f );
+                    s.color = new(0.2f + timmer / 0.5f * 0.8f, 0.2f + timmer / 0.5f * 0.8f, 0.2f + timmer / 0.5f * 0.8f);
                 }
                 if (timmer > 0.5f)
                 {
@@ -54,7 +54,7 @@ public class DropEnemy : Enemy
                 break;
             case State.floating:
                 timmer += Time.deltaTime;
-                transform.localScale = Vector3.one * (Mathf.Cos(Mathf.PI * timmer) / (1f + Mathf.Pow(timmer+0.5f, 3)) / 2 + 1);
+                transform.localScale = Vector3.one * (Mathf.Cos(Mathf.PI * timmer) / (1f + Mathf.Pow(timmer + 0.5f, 3)) / 2 + 1);
                 if (timmer > 4.5f)
                 {
                     state = State.stop;
@@ -64,5 +64,25 @@ public class DropEnemy : Enemy
                 transform.localScale = Vector3.one;
                 break;
         }
+    }
+
+    public override void DestroySlowly()
+    {
+        StartCoroutine(Des());
+    }
+
+    IEnumerator Des()
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            foreach (var s in sprites)
+            {
+                s.color = new(1 - t, 1 - t, 1 - t,1-t);
+            }
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }

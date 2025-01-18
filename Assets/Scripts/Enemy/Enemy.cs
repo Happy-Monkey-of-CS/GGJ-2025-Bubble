@@ -24,4 +24,8 @@ public class Enemy : MonoBehaviour
         rb.AddForce(force * transform.up);
         rb.AddTorque(torque);
     }
+    public virtual void DestroySlowly()
+    {
+        Destroy(gameObject);
+    }
 }
