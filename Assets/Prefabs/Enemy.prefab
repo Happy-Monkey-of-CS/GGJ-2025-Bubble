@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 3468730116149162796}
   - component: {fileID: 531513894829749752}
   - component: {fileID: 5651003666473005185}
+  - component: {fileID: -7419699940174264214}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -502,3 +503,15 @@ MonoBehaviour:
   force: 5
   torque: 0.05
   spawnR: 3
+--- !u!210 &-7419699940174264214
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7829534842126398991}
+  m_Enabled: 1
+  m_SortingLayerID: 573567805
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

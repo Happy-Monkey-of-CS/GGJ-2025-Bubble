@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CandyArea : MonoBehaviour
-{
-    public float velocity;
+public class GoldArea : MonoBehaviour
+{ public float velocity;
     public float BiggerSpeed;
     public float BiggestSize;
     Transform mother;
@@ -20,25 +19,36 @@ public class CandyArea : MonoBehaviour
     }
 
     public float delay=0.5f;
+    public float stayTime=3f;
+
     void Update()
     {
-        delay-=Time.deltaTime;
-        if(delay>0){
-            return;
-        }
         if (mother == null)
         {DestroySlowly();
             return;
         }
         transform.position = mother.position;
-        transform.localEulerAngles += new Vector3(0, 0, velocity * Time.deltaTime);
+        transform.eulerAngles =mother.eulerAngles;
 
-        sprite.color = new Color(1, 1, 1, 0.5f + (BiggestSize - transform.localScale.x) / BiggestSize / 2);
+        delay-=Time.deltaTime;
+        if(delay>0){
+            return;
+        }
 
-        transform.localScale += Vector3.one * BiggerSpeed * Time.deltaTime;
+        //sprite.color = new Color(1, 1, 1, 0.5f + (BiggestSize - transform.localScale.x) / BiggestSize / 2);
+
         if (transform.localScale.x > BiggestSize)
         {
-            transform.localScale = Vector3.one * BiggestSize;
+        transform.localScale += Vector3.one * BiggerSpeed * Time.deltaTime*0.05f;
+        }else{
+        transform.localScale += Vector3.one * BiggerSpeed * Time.deltaTime;
+        }
+
+        if(delay<-stayTime){
+        sprite.color = new Color(1, 1, 1, 1+(delay+stayTime)*2);
+        }
+        if(delay<-stayTime-0.5f){
+            Destroy(gameObject);
         }
     }
 
@@ -50,10 +60,10 @@ public class CandyArea : MonoBehaviour
     IEnumerator Des()
     {
         float t = 0;
-        while (t < 1)
+        while (t < 0.5)
         {
             t += Time.deltaTime;
-            sprite.color = new(1 - t, 1 - t, 1 - t,0.5f-t/2);
+            sprite.color = new(1 - t, 1 - t, 1 - t,0.5f-t);
             yield return null;
         }
         Destroy(gameObject);

@@ -35,6 +35,7 @@ public class MusicManager : MonoBehaviour
             Music m = Instantiate(go, transform).GetComponent<Music>();
             m.gameObject.transform.localPosition = Vector3.zero;
             music = m;
+            music.OnBeat+=Onbeat;
 
             OnChange?.Invoke(name);
         }
@@ -42,6 +43,10 @@ public class MusicManager : MonoBehaviour
         {
             Debug.LogError(e);
         }
+    }
+
+    void Onbeat(){
+        OnBeat?.Invoke();
     }
 
     // 检测是否在拍上(一拍只返回一次true)
@@ -63,6 +68,8 @@ public class MusicManager : MonoBehaviour
     public string StartMusicName = "NewYear";
 
     public Action<string> OnChange;
+
+    public Action OnBeat;
 
     //private
     private void Awake()
