@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 196209111}
   - component: {fileID: 196209114}
   - component: {fileID: 196209115}
-  - component: {fileID: 196209116}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -314,18 +313,6 @@ MonoBehaviour:
   distance: 1
   minSpeed: 1
   smoothTime: 1
---- !u!210 &196209116
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196209110}
-  m_Enabled: 1
-  m_SortingLayerID: 39153545
-  m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &479138108
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 726124264}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.62, z: 0}
+  m_LocalPosition: {x: 0, y: 2.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -552,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2003845818}
-  fwdS: "\u5728\u6D17\u6FA1\u5237\u89C6\u9891\u7684\u4EBA\u7684\u6D74\u7F38\u91CC\u5B58\u6D3B\u4E86"
+  fwdS: "\u5728\u6D17\u6FA1\u5237\u89C6\u9891\u7684\u4EBA\u7684\u6D74\u7F38\u91CC\n\u5B58\u6D3B\u4E86"
   aftS: "\u79D2"
 --- !u!1 &735774393
 GameObject:
@@ -625,6 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1086549035}
   - component: {fileID: 1086549036}
+  - component: {fileID: 1086549037}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -672,7 +660,20 @@ MonoBehaviour:
   - BigBanana
   - BigBanana
   - NewYear_4
-  StartMusicName: BigBanana
+  - Robot
+  StartMusicName: Robot
+--- !u!210 &1086549037
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086549034}
+  m_Enabled: 1
+  m_SortingLayerID: 39153545
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1142238952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1012,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642885447}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1194,7 +1195,7 @@ Transform:
   m_GameObject: {fileID: 2003845815}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.62, z: 0}
+  m_LocalPosition: {x: -2.04, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,8 +1209,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003845815}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 39153545
+  m_SortingLayer: 2
   m_SortingOrder: -220
   m_SortAtRoot: 0
 --- !u!102 &2003845818
@@ -1220,12 +1221,12 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003845815}
-  m_Text: 0.00s
+  m_Text: "\u5218\u5FB7\u534E\u5728\u6D17\u6FA1\u5237\u89C6\u9891\u7684\u4EBA\u7684\u6D74\u7F38\u91CC\n\u5B58\u6D3B\u4E860.00\u79D2"
   m_OffsetZ: 0
   m_CharacterSize: 0.06
   m_LineSpacing: 1
   m_Anchor: 4
-  m_Alignment: 1
+  m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 134
   m_FontStyle: 0
