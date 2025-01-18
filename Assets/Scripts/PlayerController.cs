@@ -111,6 +111,8 @@ public class PlayerController : MonoBehaviour
 
                 rb.AddForce(d * force);
                 animator.SetTrigger("Move");
+                // 播放拍子声音
+                GameObject.Find("DontDestory").GetComponent<DontDestroy>().PlayBeat();
 
                 inputBufferTimmer = 0;
                 inputBuffer = Vector2.zero;
