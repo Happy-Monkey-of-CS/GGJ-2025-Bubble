@@ -6,7 +6,7 @@ public class Timmer : MonoBehaviour
 {
     public  TextMesh text;
     public string fwdS,aftS;
-    string name;
+    string player_name;
 
     float startTime;
 
@@ -15,12 +15,12 @@ public class Timmer : MonoBehaviour
     }
 
     public void Awake(){
-        name = PlayerPrefs.GetString("Name");
+        player_name = PlayerPrefs.GetString("Name");
     }
     
     void Update()
     {
-        text.text=name+fwdS+(Time.time-startTime).ToString("F2")+aftS;
+        text.text=player_name+fwdS+(Time.time-startTime).ToString("F2")+aftS;
     }
 
     public float GetTime(){
