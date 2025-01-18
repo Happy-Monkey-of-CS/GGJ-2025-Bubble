@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerDeathDetector : MonoBehaviour
 {
+
+    PlayerController playerController;
+void Start(){
+    playerController=GetComponent<PlayerController>();
+}
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Killer"))
@@ -26,6 +32,8 @@ public class PlayerDeathDetector : MonoBehaviour
             go.AddForce(Time.deltaTime * (transform.position - go.transform.position).normalized*1000);
             yield return null;
         }
+        int id= go.GetComponent<LittleBubble>().id;
+        playerController.AddBubble(id);
         Destroy(go.gameObject);
     }
 }

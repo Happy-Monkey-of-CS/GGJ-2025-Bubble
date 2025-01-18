@@ -8,18 +8,15 @@ public class LittleBubble : Enemy
 
     SpriteRenderer sr;
 
+    public int id;
+
     protected override void Awake()
     {
         base.Awake();
         sr = GetComponent<SpriteRenderer>();
-        sr.sprite = GetRandomElement(sprites);
+        int randomIndex = Random.Range(0, sprites.Length);
+        id=randomIndex;
+        sr.sprite = sprites[id];
     }
 
-
-
-    T GetRandomElement<T>(T[] list)
-    {
-        int randomIndex = Random.Range(0, list.Length);
-        return list[randomIndex];
-    }
 }

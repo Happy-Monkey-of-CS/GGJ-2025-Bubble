@@ -102,7 +102,6 @@ public class Music : MonoBehaviour
         }
         if(IsOnBeat()&&Input.GetKeyDown(KeyCode.Space) ){
             FinishedBeat();
-            Debug.Log(1);
         }
     }
 }
