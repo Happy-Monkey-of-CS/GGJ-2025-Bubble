@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float force;
     public float torque;
-public float spawnR=1;
+    public float spawnR = 1;
 
     Rigidbody2D rb;
 
@@ -16,12 +16,12 @@ public float spawnR=1;
         float randomAngle = Random.Range(0f, 360f);
         transform.localEulerAngles = new Vector3(0, 0, randomAngle);
         int randomValue = Random.Range(0, 2) == 0 ? -1 : 1;
-        torque*=randomValue;
+        torque *= randomValue;
     }
 
     protected virtual void FixedUpdate()
     {
-        rb.AddForce(force*transform.up);
+        rb.AddForce(force * transform.up);
         rb.AddTorque(torque);
     }
 }
