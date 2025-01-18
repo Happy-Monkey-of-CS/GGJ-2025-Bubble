@@ -846,8 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbc8aa0a5c8f1454e8dd5c28a86ff112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fwd: {fileID: 1667032762}
-  bkwd: {fileID: 557307464}
+  bg: {fileID: 557307464}
   player: {fileID: 196209113}
   color: {r: 0.54509807, g: 0.74509805, b: 0.92941177, a: 0}
   smoothTime: 1
