@@ -16,22 +16,36 @@ public class DropEnemy : Enemy
         {
             c.enabled = false;
         }
+        foreach (var s in sprites)
+        {
+            s.color = new(1, 1, 1, 0);
+        }
+        transform.localScale = Vector3.one * (Mathf.Cos(Mathf.PI * 0) / (1f + Mathf.Pow(0, 3)) / 2 + 1);
     }
 
     protected enum State
     {
+        waiting,
         dropping,
         floating,
         stop,
     }
 
-    protected State state;
+    protected State state = State.waiting;
 
-    float timmer = 0;
+    public float timmer = 0;
     protected virtual void Update()
     {
         switch (state)
         {
+            case State.waiting:
+                timmer += Time.deltaTime;
+                if (timmer >= 0)
+                {
+                    timmer = 0;
+                    state = State.dropping;
+                }
+                break;
             case State.dropping:
                 timmer += Time.deltaTime;
                 transform.localScale = Vector3.one * (Mathf.Cos(Mathf.PI * timmer) / (1f + Mathf.Pow(timmer, 3)) / 2 + 1);
@@ -77,9 +91,16 @@ public class DropEnemy : Enemy
         while (t < 1)
         {
             t += Time.deltaTime;
+            if (sprites == null)
+            {
+                break;
+            }
             foreach (var s in sprites)
             {
-                s.color = new(1 - t, 1 - t, 1 - t,1-t);
+                if (s != null)
+                {
+                    s.color = new(s.color.r-Time.deltaTime, s.color.g-Time.deltaTime, s.color.b-Time.deltaTime, s.color.a-Time.deltaTime);
+                }
             }
             yield return null;
         }

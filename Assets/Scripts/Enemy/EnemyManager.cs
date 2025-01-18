@@ -47,9 +47,14 @@ public class EnemyManager : MonoBehaviour
     float specialTimmer = 0;
     public float specialRate;
     LayerMask mask;
-    void Update()
+
+    void OnBeat(){
+    }
+
+     void Update()
     {
         Check();
+
         specialTimmer += Time.deltaTime;
         if (specialTimmer >= specialRate)
         {
@@ -62,6 +67,7 @@ public class EnemyManager : MonoBehaviour
     {
         mask = LayerMask.GetMask("Player");
         MusicManager.Instance.OnChange+=ChangeSpecial;
+        MusicManager.Instance.OnBeat+=OnBeat;
         specialTimmer=999;
     }
 
@@ -91,7 +97,7 @@ public class EnemyManager : MonoBehaviour
                 bool hasPlayer = true;
                 while (hasPlayer)
                 {
-                    p = new Vector3(UnityEngine.Random.Range(-8.7f, 8.7f), UnityEngine.Random.Range(-5f, 5f));
+                    p = new Vector3(UnityEngine.Random.Range(-7f, 7f), UnityEngine.Random.Range(-4f, 4f));
                     hasPlayer = CheckPlayer(blockP + p, e.spawnR, mask);
                 }
                 go.transform.position = blockP + p;

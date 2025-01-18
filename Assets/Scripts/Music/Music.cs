@@ -1,7 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Music : MonoBehaviour
@@ -58,6 +57,7 @@ public class Music : MonoBehaviour
         audioSource.Play();
     }
 
+    public Action OnBeat;
     void Update()
     {
         if (audioSource.isPlaying)
@@ -74,6 +74,7 @@ public class Music : MonoBehaviour
 
             while (lastBeat < currentBeat + beatCount * displayCount)
             {
+
                 lastBeat += beatCount;
                 GameObject go = Instantiate(beatDisplay, transform);
                 BeatDisplay beat = go.GetComponent<BeatDisplay>();
@@ -86,6 +87,8 @@ public class Music : MonoBehaviour
                 s2.x *= -1;
                 beat2.Init(bpm, offset, s2, lastBeat);
                 beats.Add(beat2);
+
+                OnBeat?.Invoke();
             }
 
             foreach (var b in beats.ToArray())
