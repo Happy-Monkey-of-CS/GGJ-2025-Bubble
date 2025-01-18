@@ -98,6 +98,15 @@ public class PlayerController : MonoBehaviour
                     energy -= speed_energy;
                     d *= speedUpRate;
                 }
+
+                Collider2D[] colliders=Physics2D.OverlapCircleAll(transform.position,0.5f,LayerMask.GetMask("Player"));
+
+                foreach(var c in colliders){
+                    if(c.CompareTag("LowSpeed")){
+                        d/=speedUpRate;
+                    }
+                }
+
                 rb.AddForce(d * force);
 
                 inputBufferTimmer = 0;
