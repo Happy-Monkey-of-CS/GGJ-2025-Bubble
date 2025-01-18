@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    public int energy;
+    int bubble_num;
+    int bubble_max = 10;         // 最大容量
     public float force = 50f;         //运动速度
-    public int speed_energy = 1;   // 用一次空格耗能
 
     public float speedUpRate = 2;
 
@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    GameObject bubbles;
+    public GameObject[] prefabs;        // 1蓝2粉3紫4黄
+
     MusicManager music;
     void Start()
     {
         music = MusicManager.Instance;
         rb = GetComponent<Rigidbody2D>();
         playerRotation=GetComponent<PlayerRotation>();
-        energy = 200;
+        bubbles = GameObject.Find("Bubbles").gameObject;
     }
 
     public KeyCode up, down, left, right, speedUp;
@@ -100,9 +103,8 @@ public class PlayerController : MonoBehaviour
                 //transform.up=d;
                 transform.localEulerAngles=new Vector3(0,0,-Mathf.Atan2(d.x,d.y)*Mathf.Rad2Deg);
                 music.FinishedBeat();
-                if (Input.GetKey(speedUp) && energy > speed_energy)
+                if (Input.GetKey(speedUp) && bubble_num > 0)
                 {
-                    energy -= speed_energy;
                     d *= speedUpRate;
                 }
 
@@ -129,6 +131,22 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+    public void AddBubble(int index){
+        if(bubble_num < bubble_max){
+            bubble_num++;
+            GameObject bubble = GameObject.Instantiate(prefabs[index]) as GameObject;
+            bubble.transform.parent = bubbles.transform;
+            bubble.transform.position = GameObject.Find("Brith").gameObject.transform.position;
+        }
+    }
+
+    public void RemoveBubble(){
+        if(bubble_num > 0){
+            bubble_num--;
+            Destroy(bubbles.transform.GetChild(0).gameObject);
+        }
     }
 
     private void Update()
