@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public static GameManager Instance;
+    public GameManager(){
+        if (Instance != null)
+        {
+            Debug.LogWarning("Replacing existing instance");
+        }
+        Instance=this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.G)){
-            GameOver();
-        }
-    }
 
     public void GameOver(){
         // 表示需要加一条新的
