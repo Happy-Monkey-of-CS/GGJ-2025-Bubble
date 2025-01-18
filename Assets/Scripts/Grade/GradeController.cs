@@ -56,9 +56,12 @@ public class GradeController : MonoBehaviour
     public void AddGrade(float time, string name){
         // 原来就有这个玩家
         if(list.ContainsValue(name)){
-            float key = list.FirstOrDefault(x=>x.Value==name).Key;
-            list.Remove(key);
-            list.Add(time, name);
+            float old_time = list.FirstOrDefault(x=>x.Value==name).Key;
+            // 这次成绩更高才能覆盖
+            if(time > old_time){
+                list.Remove(old_time);
+                list.Add(time, name);
+            }
         }
         // 原来没有
         else{
