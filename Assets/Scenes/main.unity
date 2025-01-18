@@ -430,7 +430,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8803f66042be4311999508feb4a4ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartMusicName: NewYear_2
+  musics:
+  - NewYear_3
+  - NewYear_4
+  - BigBanana
+  - Manbo_1
+  - APT_1
+  - APT_2
+  - APT_3
+  - Manbo_2
+  - Manbo_3
+  - BigBanana
+  - BigBanana
+  - NewYear_4
+  StartMusicName: Manbo_3
 --- !u!1 &1142238952
 GameObject:
   m_ObjectHideFlags: 0
