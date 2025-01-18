@@ -784,6 +784,8 @@ MonoBehaviour:
     gameObject: {fileID: 4386699213842394244, guid: 0d455f2105e1b47c5827deeab09b3c92, type: 3}
   - name: BigBanana
     gameObject: {fileID: 2841209230969457368, guid: f6c9a42dbc519458394ba3f698f605fc, type: 3}
+  - name: Robot
+    gameObject: {fileID: 6836748587045094010, guid: a8b5d7ba42bead04784a60331b786acd, type: 3}
 --- !u!4 &735774395
 Transform:
   m_ObjectHideFlags: 0
