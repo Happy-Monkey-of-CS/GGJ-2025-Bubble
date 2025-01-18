@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         music = MusicManager.Instance;
         rb = GetComponent<Rigidbody2D>();
-        playerRotation=GetComponent<PlayerRotation>();
+        playerRotation = GetComponent<PlayerRotation>();
         bubbles = GameObject.Find("Bubbles").gameObject;
     }
 
@@ -59,6 +59,10 @@ public class PlayerController : MonoBehaviour
                 {
                     inputBuffer = Vector2.right;
                 }
+            }
+            else if (Input.GetKeyDown(left) || Input.GetKeyDown(right) || Input.GetKeyDown(up) || Input.GetKeyDown(down))
+            {
+                music.FinishedBeat();
             }
             if (inputBuffer != Vector2.zero)
             {
@@ -101,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 inputBuffer = inputBuffer.normalized;
                 Vector2 d = inputBuffer;
                 //transform.up=d;
-                transform.localEulerAngles=new Vector3(0,0,-Mathf.Atan2(d.x,d.y)*Mathf.Rad2Deg);
+                transform.localEulerAngles = new Vector3(0, 0, -Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg);
                 music.FinishedBeat();
                 if (Input.GetKey(speedUp) && bubble_num > 0)
                 {
@@ -109,11 +113,13 @@ public class PlayerController : MonoBehaviour
                     d *= speedUpRate;
                 }
 
-                Collider2D[] colliders=Physics2D.OverlapCircleAll(transform.position,0.5f,LayerMask.GetMask("Player"));
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f, LayerMask.GetMask("Player"));
 
-                foreach(var c in colliders){
-                    if(c.CompareTag("LowSpeed")){
-                        d/=speedUpRate;
+                foreach (var c in colliders)
+                {
+                    if (c.CompareTag("LowSpeed"))
+                    {
+                        d /= speedUpRate;
                     }
                 }
 
@@ -121,7 +127,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("Move");
                 // 播放拍子声音
                 //GameObject.Find("DontDestory").GetComponent<DontDestroy>().PlayBeat();
-                rb.angularVelocity=0;
+                rb.angularVelocity = 0;
 
                 playerRotation.Change();
 
@@ -134,8 +140,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void AddBubble(int index){
-        if(bubble_num < bubble_max){
+    public void AddBubble(int index)
+    {
+        if (bubble_num < bubble_max)
+        {
             bubble_num++;
             GameObject bubble = GameObject.Instantiate(prefabs[index]) as GameObject;
             bubble.transform.parent = bubbles.transform;
@@ -143,8 +151,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void RemoveBubble(){
-        if(bubble_num > 0){
+    public void RemoveBubble()
+    {
+        if (bubble_num > 0)
+        {
             bubble_num--;
             Destroy(bubbles.transform.GetChild(0).gameObject);
         }
