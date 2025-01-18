@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 0
   torque: 0.1
-  spawnR: 2.5
+  spawnR: 0.5
   startSize: 3
   cs:
   - {fileID: 8050810120958250157}
