@@ -395,6 +395,7 @@ MonoBehaviour:
   startSize: 0
   cs:
   - {fileID: 682515600791521661}
+  - {fileID: 3628159545458956171}
   sprites:
   - {fileID: 1245111262942808264}
   timmer: -1
