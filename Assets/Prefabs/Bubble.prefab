@@ -123,6 +123,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8ee3f6de319104740b3afc54834234fb, type: 3}
   - {fileID: 21300000, guid: b6ff698108ecd2048b1345262b002af9, type: 3}
   - {fileID: 21300000, guid: dfcbd46684ea7b7419f675798dc2cd72, type: 3}
+  id: 0
 --- !u!50 &6444754288964741963
 Rigidbody2D:
   serializedVersion: 4
@@ -205,7 +206,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 12d142a4ab65c46c9be8f814b5f68fed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
