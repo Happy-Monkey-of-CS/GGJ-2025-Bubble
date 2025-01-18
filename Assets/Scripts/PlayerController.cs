@@ -105,6 +105,7 @@ public class PlayerController : MonoBehaviour
                 music.FinishedBeat();
                 if (Input.GetKey(speedUp) && bubble_num > 0)
                 {
+                    RemoveBubble();
                     d *= speedUpRate;
                 }
 
