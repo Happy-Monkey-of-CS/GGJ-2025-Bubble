@@ -48,7 +48,7 @@ public class GradeController : MonoBehaviour
         foreach (Transform child in list_gameobject.transform)
         {
             child.gameObject.transform.Find("Name").GetComponent<Text>().text = list.ElementAt(num - 1 - index).Value;
-            child.gameObject.transform.Find("Time").GetComponent<Text>().text = list.ElementAt(num - 1 - index).Key.ToString();
+            child.gameObject.transform.Find("Time").GetComponent<Text>().text = list.ElementAt(num - 1 - index).Key.ToString("F2");
             index++;
         }
     }
