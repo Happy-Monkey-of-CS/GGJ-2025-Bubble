@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8803f66042be4311999508feb4a4ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartMusicName: NewYear
+  StartMusicName: NewYear_2
 --- !u!1 &1142238952
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   force: 600
   speed_energy: 1
   speedUpRate: 2
-  inputDelay: 0.1
+  inputDelay: 0.05
   up: 119
   down: 115
   left: 97
