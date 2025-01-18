@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         music = MusicManager.Instance;
         rb = GetComponent<Rigidbody2D>();
+        playerRotation=GetComponent<PlayerRotation>();
         energy = 200;
     }
 
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     float inputBufferTimmer = 0;
     bool doubleInput = true;
+
+    PlayerRotation playerRotation;
+
 
     private void GetInput()
     {
@@ -93,7 +97,8 @@ public class PlayerController : MonoBehaviour
             {
                 inputBuffer = inputBuffer.normalized;
                 Vector2 d = inputBuffer;
-                transform.up=d;
+                //transform.up=d;
+                transform.localEulerAngles=new Vector3(0,0,-Mathf.Atan2(d.x,d.y)*Mathf.Rad2Deg);
                 music.FinishedBeat();
                 if (Input.GetKey(speedUp) && energy > speed_energy)
                 {
@@ -111,6 +116,9 @@ public class PlayerController : MonoBehaviour
 
                 rb.AddForce(d * force);
                 animator.SetTrigger("Move");
+                rb.angularVelocity=0;
+
+                playerRotation.Change();
 
                 inputBufferTimmer = 0;
                 inputBuffer = Vector2.zero;
