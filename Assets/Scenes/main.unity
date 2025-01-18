@@ -415,7 +415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1086549035
 Transform:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1961698337
 Transform:
   m_ObjectHideFlags: 0
@@ -840,15 +840,9 @@ MonoBehaviour:
   musics:
   - NewYear_3
   - NewYear_4
-  - BigBanana
-  - Manbo_1
   - APT_1
   - APT_2
   - APT_3
-  - Manbo_2
-  - Manbo_3
-  - BigBanana
-  - BigBanana
   - NewYear_4
   StartMusicName: NewYear_4
 --- !u!1 &2003845815

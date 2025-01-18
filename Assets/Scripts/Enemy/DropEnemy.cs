@@ -99,7 +99,7 @@ public class DropEnemy : Enemy
             {
                 if (s != null)
                 {
-                    s.color = new(1 - t, 1 - t, 1 - t, 1 - t);
+                    s.color = new(s.color.r-Time.deltaTime, s.color.g-Time.deltaTime, s.color.b-Time.deltaTime, s.color.a-Time.deltaTime);
                 }
             }
             yield return null;
