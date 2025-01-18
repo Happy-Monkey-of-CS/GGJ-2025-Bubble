@@ -74,7 +74,7 @@ public class MusicManager : MonoBehaviour
     //private
     private void Awake()
     {
-        //StartMusicName = GetRandomElement(musics);
+       // StartMusicName = GetRandomElement(musics);
 
         SwitchTo(StartMusicName);
         nowPlaying = StartMusicName;

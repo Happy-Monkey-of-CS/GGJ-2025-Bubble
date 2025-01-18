@@ -5,6 +5,7 @@ using UnityEngine;
 public class Timmer : MonoBehaviour
 {
     public  TextMesh text;
+    [TextArea]
     public string fwdS,aftS;
     string player_name;
 
