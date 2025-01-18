@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
             {
                 inputBuffer = inputBuffer.normalized;
                 Vector2 d = inputBuffer;
+                transform.up=d;
                 music.FinishedBeat();
                 if (Input.GetKey(speedUp) && energy > speed_energy)
                 {

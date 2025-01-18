@@ -230,7 +230,7 @@ MonoBehaviour:
   bpm: 132
   beatCount: 2
   displayCount: 3
-  offset: 0.5
+  offset: -1.3181819
   beatDisplay: {fileID: 6761820136216633300, guid: a2e339add80e74955ba784269667617e, type: 3}
   scale: {x: 1, y: 0, z: 0}
   error: 0.25

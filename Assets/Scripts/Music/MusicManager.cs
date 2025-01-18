@@ -16,20 +16,24 @@ public class MusicManager : MonoBehaviour
         Instance = this;
     }
 
+    public string[] musics;
+
     // 音乐实例
     public Music music { get; private set; }
 
     // 切换音乐
     public void SwitchTo(string name)
     {
-        if(music!=null){
-        Destroy(music.gameObject);
+        lastSecond = 0;
+        if (music != null)
+        {
+            Destroy(music.gameObject);
         }
         try
         {
             GameObject go = Resources.Load<GameObject>($"music/{name}");
-            Music m = Instantiate(go,transform).GetComponent<Music>();
-            m.gameObject.transform.localPosition=Vector3.zero;
+            Music m = Instantiate(go, transform).GetComponent<Music>();
+            m.gameObject.transform.localPosition = Vector3.zero;
             music = m;
         }
         catch (Exception e)
@@ -41,22 +45,68 @@ public class MusicManager : MonoBehaviour
     // 检测是否在拍上(一拍只返回一次true)
     public bool IsOnBeat()
     {
-        if(music==null){
+        if (music == null)
+        {
             return false;
         }
         return music.IsOnBeat();
     }
 
     // 设置当前拍子为已完成的拍子
-    public void FinishedBeat(){
+    public void FinishedBeat()
+    {
         music.FinishedBeat();
     }
 
-    public string StartMusicName="NewYear";
+    public string StartMusicName = "NewYear";
 
     //private
     private void Awake()
     {
+        //StartMusicName = GetRandomElement(musics);
+
         SwitchTo(StartMusicName);
+        nowPlaying = StartMusicName;
+    }
+
+    string nowPlaying = "";
+    int lastSecond = 0;
+
+    private void Update()
+    {
+        if (!music.audioSource.isPlaying)
+        {
+            RandomMusic();
+        }
+        else
+        {
+            if (music.audioSource.time >=10)
+            {
+                if (lastSecond != Mathf.FloorToInt(music.audioSource.time))
+                {
+                    lastSecond = Mathf.FloorToInt(music.audioSource.time);
+                    if (UnityEngine.Random.Range(0,1f) < 0.1f)
+                    {
+                        RandomMusic();
+                    }
+                }
+            }
+        }
+    }
+
+    public void RandomMusic()
+    {
+        string n = GetRandomElement(musics);
+        while (n == nowPlaying)
+        {
+            n = GetRandomElement(musics);
+        }
+        SwitchTo(n);
+        nowPlaying = n;
+    }
+    T GetRandomElement<T>(T[] list)
+    {
+        int randomIndex = UnityEngine.Random.Range(0, list.Length);
+        return list[randomIndex];
     }
 }
