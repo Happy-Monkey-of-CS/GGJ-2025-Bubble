@@ -501,3 +501,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 5
   torque: 0.05
+  spawnR: 3

@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     public float force;
     public float torque;
+public float spawnR=1;
+
     Rigidbody2D rb;
 
     protected virtual void Awake()
