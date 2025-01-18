@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("New", 1);
         float time = GameObject.Find("Timmer").GetComponent<Timmer>().GetTime();
         PlayerPrefs.SetFloat("Time", time);
+        // 播放失败声音
+        GameObject.Find("DontDestory").GetComponent<DontDestroy>().PlayFail();
         SceneManager.LoadScene("Grade");
     }
 }

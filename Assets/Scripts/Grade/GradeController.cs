@@ -56,15 +56,15 @@ public class GradeController : MonoBehaviour
                                                                                 "不太牛逼";
             // 第一名
             if(index == 0){
-                child.gameObject.GetComponent<Image>().color = new Color(1, 0, 0, 1);
+                child.gameObject.GetComponent<Image>().color = new Color(0.96f, 0.87f, 0.32f, 1);  // 242 219 87
             }
             // 第二名
             if(index == 1){
-                child.gameObject.GetComponent<Image>().color = new Color(0, 0, 1, 1);
+                child.gameObject.GetComponent<Image>().color = new Color(0.73f, 0.73f, 0.73f, 1);
             }
             // 第三名
             if(index == 2){
-                child.gameObject.GetComponent<Image>().color = new Color(0, 1, 1, 1);
+                child.gameObject.GetComponent<Image>().color = new Color(0.76f, 0.68f, 0.4f, 1);   // 191 171 102
             }
             index++;
         }

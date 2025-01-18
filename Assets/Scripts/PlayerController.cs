@@ -116,6 +116,8 @@ public class PlayerController : MonoBehaviour
 
                 rb.AddForce(d * force);
                 animator.SetTrigger("Move");
+                // 播放拍子声音
+                GameObject.Find("DontDestory").GetComponent<DontDestroy>().PlayBeat();
                 rb.angularVelocity=0;
 
                 playerRotation.Change();
