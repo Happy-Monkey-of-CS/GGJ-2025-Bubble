@@ -441,7 +441,7 @@ MonoBehaviour:
   target: {fileID: 196209113}
   enemyBlockPrefabs:
   - {fileID: 4468029107500657574, guid: b0da8f87ad66a4d8999d50972814e3ee, type: 3}
-  specialRate: 3
+  specialRate: 5
   specialPair:
   - name: APT_1
     gameObject: {fileID: 6121465951852825874, guid: 1abea7ca33dd141ecbfba8be86cafe81, type: 3}
@@ -453,6 +453,8 @@ MonoBehaviour:
     gameObject: {fileID: 4386699213842394244, guid: 0d455f2105e1b47c5827deeab09b3c92, type: 3}
   - name: NewYear_4
     gameObject: {fileID: 4386699213842394244, guid: 0d455f2105e1b47c5827deeab09b3c92, type: 3}
+  - name: BigBanana
+    gameObject: {fileID: 2841209230969457368, guid: f6c9a42dbc519458394ba3f698f605fc, type: 3}
 --- !u!4 &735774395
 Transform:
   m_ObjectHideFlags: 0
@@ -484,7 +486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1086549035
 Transform:
   m_ObjectHideFlags: 0
@@ -525,7 +527,7 @@ MonoBehaviour:
   - BigBanana
   - BigBanana
   - NewYear_4
-  StartMusicName: NewYear_4
+  StartMusicName: BigBanana
 --- !u!1 &1142238952
 GameObject:
   m_ObjectHideFlags: 0

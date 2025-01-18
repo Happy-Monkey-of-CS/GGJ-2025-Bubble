@@ -48,10 +48,11 @@ public class EnemyManager : MonoBehaviour
     public float specialRate;
     LayerMask mask;
 
-    void OnBeat(){
+    void OnBeat()
+    {
     }
 
-     void Update()
+    void Update()
     {
         Check();
 
@@ -66,9 +67,9 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         mask = LayerMask.GetMask("Player");
-        MusicManager.Instance.OnChange+=ChangeSpecial;
-        MusicManager.Instance.OnBeat+=OnBeat;
-        specialTimmer=999;
+        MusicManager.Instance.OnChange += ChangeSpecial;
+        MusicManager.Instance.OnBeat += OnBeat;
+        specialTimmer = 999;
     }
 
     [Serializable]
@@ -80,7 +81,7 @@ public class EnemyManager : MonoBehaviour
 
     public SpecialPair[] specialPair;
 
-    List<Enemy> specialEnemies=new();
+    List<Enemy> specialEnemies = new();
 
     void Special()
     {
@@ -93,7 +94,7 @@ public class EnemyManager : MonoBehaviour
                 specialEnemies.Add(e);
 
                 Vector3 p = Vector3.zero;
-                Vector3 blockP = new Vector3(target.position.x, target.position.y );
+                Vector3 blockP = new Vector3(target.position.x, target.position.y);
                 bool hasPlayer = true;
                 while (hasPlayer)
                 {
@@ -107,12 +108,15 @@ public class EnemyManager : MonoBehaviour
 
     void ChangeSpecial(string name)
     {
-        foreach(var go in specialEnemies)
+        foreach (var go in specialEnemies)
         {
-            go.DestroySlowly();
+            if (go != null)
+            {
+                go.DestroySlowly();
+            }
         }
         specialEnemies.Clear();
-        specialTimmer=999;
+        specialTimmer = 999;
     }
 
     public static bool CheckPlayer(Vector3 pos, float r, LayerMask mask)
