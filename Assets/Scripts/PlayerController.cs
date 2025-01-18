@@ -51,8 +51,12 @@ public class PlayerController : MonoBehaviour
                     inputBuffer = Vector2.right;
                 }
             }
-            inputBufferTimmer = 0;
-            doubleInput = true;
+            if (inputBuffer != Vector2.zero)
+            {
+                inputBufferTimmer = 0;
+                doubleInput = true;
+                GetInput();
+            }
         }
         else // 斜向输入
         {
@@ -83,9 +87,9 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (inputBufferTimmer >= inputDelay||!doubleInput)
+            if (inputBufferTimmer >= inputDelay || !doubleInput)
             {
-                inputBuffer=inputBuffer.normalized;
+                inputBuffer = inputBuffer.normalized;
                 Vector2 d = inputBuffer;
                 music.FinishedBeat();
                 if (Input.GetKey(speedUp) && energy > speed_energy)
