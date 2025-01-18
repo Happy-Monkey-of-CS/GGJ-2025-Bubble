@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public float inputDelay = 0.1f; // 斜向输入延迟
 
+    public Animator animator;
+
     MusicManager music;
     void Start()
     {
@@ -108,6 +110,7 @@ public class PlayerController : MonoBehaviour
                 }
 
                 rb.AddForce(d * force);
+                animator.SetTrigger("Move");
 
                 inputBufferTimmer = 0;
                 inputBuffer = Vector2.zero;
