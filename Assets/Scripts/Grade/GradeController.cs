@@ -27,6 +27,13 @@ public class GradeController : MonoBehaviour
             GameObject grade = GameObject.Instantiate(prefab) as GameObject;
             grade.transform.parent = list_gameobject.transform;
         }
+        // 需要添加新的记录
+        if(PlayerPrefs.GetInt("New") == 1){
+            PlayerPrefs.SetInt("New", 0);
+            string name = PlayerPrefs.GetString("Name");
+            float time = PlayerPrefs.GetFloat("Time");
+            AddGrade(time, name);
+        }
         Repaint();
     }
 
@@ -40,16 +47,13 @@ public class GradeController : MonoBehaviour
         int index = 0;
         foreach (Transform child in list_gameobject.transform)
         {
-            child.gameObject.transform.Find("Name").GetComponent<Text>().text = list.ElementAt(index).Value;
-            child.gameObject.transform.Find("Time").GetComponent<Text>().text = list.ElementAt(index).Key.ToString();
+            child.gameObject.transform.Find("Name").GetComponent<Text>().text = list.ElementAt(num - 1 - index).Value;
+            child.gameObject.transform.Find("Time").GetComponent<Text>().text = list.ElementAt(num - 1 - index).Key.ToString();
             index++;
         }
     }
 
-    public void AddGrade(){
-        // 添加新的成绩
-        float time = Random.Range(0,50);
-        string name = "name" + time.ToString();
+    public void AddGrade(float time, string name){
         // 原来就有这个玩家
         if(list.ContainsValue(name)){
             float key = list.FirstOrDefault(x=>x.Value==name).Key;

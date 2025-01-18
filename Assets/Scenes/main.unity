@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2003845818}
-  fwdS: "\u4F60\u5728\u6D17\u6FA1\u5237\u89C6\u9891\u7684\u4EBA\u7684\u6D74\u7F38\u91CC\u5B58\u6D3B\u4E86"
+  fwdS: "\u5728\u6D17\u6FA1\u5237\u89C6\u9891\u7684\u4EBA\u7684\u6D74\u7F38\u91CC\u5B58\u6D3B\u4E86"
   aftS: "\u79D2"
 --- !u!1 &735774393
 GameObject:
