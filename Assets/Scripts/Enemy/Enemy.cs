@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public float torque;
     public float spawnR = 1;
 
+    Vector3 startPoint;
+
     Rigidbody2D rb;
 
     protected virtual void Awake()
@@ -20,6 +22,11 @@ public class Enemy : MonoBehaviour
         torque *= randomValue;
     }
 
+    protected virtual void Start()
+    {
+        startPoint = transform.position;
+    }
+
     protected virtual void FixedUpdate()
     {
         rb.AddForce(force * transform.up);
@@ -28,5 +35,20 @@ public class Enemy : MonoBehaviour
     public virtual void DestroySlowly()
     {
         Destroy(gameObject);
+    }
+
+    protected virtual void Update()
+    {
+        if (Distance(Camera.main.transform.position, startPoint) > 10 && Distance(Camera.main.transform.position, transform.position) > 10)
+        {
+            transform.position = startPoint;
+        }
+    }
+
+    float Distance(Vector3 a, Vector3 b)
+    {
+        a.z = 0;
+        b.z = 0;
+        return (a - b).magnitude;
     }
 }
