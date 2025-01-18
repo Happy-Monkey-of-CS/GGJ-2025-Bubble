@@ -64,6 +64,29 @@ public class PlayerController : MonoBehaviour
             {
                 music.FinishedBeat();
             }
+            if (inputBuffer == Vector2.zero&&bubble_num > 0&&Input.GetKey(speedUp))
+            {
+                if (Input.GetKeyDown(up) && !Input.GetKeyDown(down))
+                {
+                    inputBuffer = Vector2.up;
+                    RemoveBubble();
+                }
+                else if (Input.GetKeyDown(down) && !Input.GetKeyDown(up))
+                {
+                    inputBuffer = Vector2.down;
+                    RemoveBubble();
+                }
+                else if (Input.GetKeyDown(left) && !Input.GetKeyDown(right))
+                {
+                    inputBuffer = Vector2.left;
+                    RemoveBubble();
+                }
+                else if (Input.GetKeyDown(right) && !Input.GetKeyDown(left))
+                {
+                    inputBuffer = Vector2.right;
+                    RemoveBubble();
+                }
+            }
             if (inputBuffer != Vector2.zero)
             {
                 inputBufferTimmer = 0;
@@ -107,11 +130,6 @@ public class PlayerController : MonoBehaviour
                 //transform.up=d;
                 transform.localEulerAngles = new Vector3(0, 0, -Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg);
                 music.FinishedBeat();
-                if (Input.GetKey(speedUp) && bubble_num > 0)
-                {
-                    RemoveBubble();
-                    d *= speedUpRate;
-                }
 
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f, LayerMask.GetMask("Player"));
 
