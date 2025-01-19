@@ -112,7 +112,6 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
-    string nowName = "None_1";
     void ChangeSpecial(string name)
     {
         foreach (var go in specialEnemies)
