@@ -355,8 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eab51bca476f40a6890960c43d8b0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 5
-  torque: 0.01
+  force: 0
+  torque: 0.075
   spawnR: 3
 --- !u!210 &-7419699940174264214
 SortingGroup:
