@@ -229,7 +229,7 @@ MonoBehaviour:
   audioSource: {fileID: 2973210412935530467}
   bpm: 125
   beatCount: 2
-  displayCount: 3
+  displayCount: 5
   offset: -0.6
   beatDisplay: {fileID: 6761820136216633300, guid: a2e339add80e74955ba784269667617e, type: 3}
   scale: {x: 1, y: 0, z: 0}
