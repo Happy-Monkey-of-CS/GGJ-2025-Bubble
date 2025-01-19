@@ -12,6 +12,13 @@ public class ChangeSprite : MonoBehaviour
     void Awake()
     {
         MusicManager.Instance.OnChange += Change;
+        foreach (var b in datas)
+        {
+            if (MusicManager.Instance.nowPlaying.Contains(b.name))
+            {
+                spriteRenderer.sprite = b.sprite;
+            }
+        }
     }
 
     void Change(string s)
