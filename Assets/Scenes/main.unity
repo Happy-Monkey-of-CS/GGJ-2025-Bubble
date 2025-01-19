@@ -1088,6 +1088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 726124265}
   - component: {fileID: 726124266}
+  - component: {fileID: 726124267}
   m_Layer: 0
   m_Name: Timmer
   m_TagString: Untagged
@@ -1129,6 +1130,20 @@ MonoBehaviour:
   fwdS: "\u5728\u6D17\u6FA1\u5237\u89C6\u9891\u7684\u4EBA\u7684\u6D74\u7F38\u91CC\n\u5B58\u6D3B\u4E86"
   aftS: '  '
   second: "\u79D2"
+--- !u!114 &726124267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726124264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51c618de8826481d8e8eb58c93cc4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orthoCamera: {fileID: 196209112}
+  offset: {x: 2.5, y: -1}
 --- !u!1 &735774393
 GameObject:
   m_ObjectHideFlags: 0
@@ -12497,7 +12512,6 @@ GameObject:
   - component: {fileID: 2003845819}
   - component: {fileID: 2003845818}
   - component: {fileID: 2003845817}
-  - component: {fileID: 2003845820}
   m_Layer: 0
   m_Name: New Text (1)
   m_TagString: Untagged
@@ -12596,20 +12610,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2003845820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003845815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51c618de8826481d8e8eb58c93cc4db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orthoCamera: {fileID: 196209112}
-  offset: {x: 0.75, y: -0.75}
 --- !u!1 &2084812128
 GameObject:
   m_ObjectHideFlags: 0
