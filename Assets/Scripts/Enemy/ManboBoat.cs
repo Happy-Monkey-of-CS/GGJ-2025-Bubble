@@ -6,10 +6,12 @@ public class ManboBoat : Boat
 {
 
     public int moreBoat=1;
+    public GameObject killbox;
 
     protected override void Start()
     {
         base.Start();
+        killbox.SetActive(true);
         bool enemy=true;
 
         float random=0;
