@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,9 +93,148 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "\u7C89\u8272_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3886
+        width: 1789
+        height: 2303
+      alignment: 9
+      pivot: {x: 0.65078306, y: 0.29604346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b241d090a2b164d56ab48f4aae16a0cd
+      internalID: -761257007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7C89\u8272_1"
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 1648
+        width: 2089
+        height: 2319
+      alignment: 9
+      pivot: {x: 0.41858757, y: 0.5035298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9e67a2b602d446cb1826b223c773a0
+      internalID: 1145922192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7C89\u8272_2"
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 0
+        width: 1221
+        height: 2667
+      alignment: 9
+      pivot: {x: 0.24306634, y: 0.62271047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbdc8a5fc8444618b72f906076116dc
+      internalID: -445417030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7C89\u8272_3"
+      rect:
+        serializedVersion: 2
+        x: 5385
+        y: 0
+        width: 2254
+        height: 2857
+      alignment: 9
+      pivot: {x: 0.62865996, y: 0.6387166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b12246ef50b41b9b75c874b44a8f2c
+      internalID: -236219365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7C89\u8272_4"
+      rect:
+        serializedVersion: 2
+        x: 8015
+        y: 1919
+        width: 2518
+        height: 2523
+      alignment: 9
+      pivot: {x: 0.46604332, y: 0.4069952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a8c4ff909bf4ddb9ef1781440791dd
+      internalID: -1162082689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u7C89\u8272_5"
+      rect:
+        serializedVersion: 2
+        x: 4214
+        y: 3475
+        width: 2893
+        height: 3359
+      alignment: 9
+      pivot: {x: 0.49449962, y: 0.7251788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b07eaf7d1f04a158f2867fab3e43d8
+      internalID: -171459648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +245,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u7C89\u8272_0": -761257007
+      "\u7C89\u8272_1": 1145922192
+      "\u7C89\u8272_2": -445417030
+      "\u7C89\u8272_3": -236219365
+      "\u7C89\u8272_4": -1162082689
+      "\u7C89\u8272_5": -171459648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
