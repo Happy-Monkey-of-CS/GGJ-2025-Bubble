@@ -72,7 +72,7 @@ public class MusicManager : MonoBehaviour
     public Action OnBeat;
 
     //private
-    private void Awake()
+    private void Start()
     {
        // StartMusicName = GetRandomElement(musics);
 
