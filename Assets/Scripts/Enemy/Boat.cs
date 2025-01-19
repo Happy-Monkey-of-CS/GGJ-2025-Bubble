@@ -48,4 +48,9 @@ public class Boat : Enemy
             rb2.AddTorque(t);
         }
     }
+
+    void OnDestroy()
+    {
+        MusicManager.Instance.OnBeat -= OnBeat;
+    }
 }
