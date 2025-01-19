@@ -83,6 +83,7 @@ public class EnemyManager : MonoBehaviour
 
     List<Enemy> specialEnemies = new();
 
+
     void Special()
     {
         foreach (var pair in specialPair)
@@ -96,10 +97,16 @@ public class EnemyManager : MonoBehaviour
                 Vector3 p = Vector3.zero;
                 Vector3 blockP = new Vector3(target.position.x, target.position.y);
                 bool hasPlayer = true;
-                while (hasPlayer)
+                int tryCount = 0;
+                while (hasPlayer && tryCount < 100)
                 {
                     p = new Vector3(UnityEngine.Random.Range(-7f, 7f), UnityEngine.Random.Range(-4f, 4f));
                     hasPlayer = CheckPlayer(blockP + p, e.spawnR, mask);
+                    if (CheckEnemy(blockP + p, e.spawnR/2, mask))
+                    {
+                        hasPlayer = true;
+                    }
+                    tryCount += 1;
                 }
                 go.transform.position = blockP + p;
             }
@@ -126,6 +133,21 @@ public class EnemyManager : MonoBehaviour
         foreach (var c in collider)
         {
             if (c != null && c.CompareTag("Player"))
+            {
+                hasPlayer = true;
+                break;
+            }
+        }
+        return hasPlayer;
+    }
+
+    public static bool CheckEnemy(Vector3 pos, float r, LayerMask mask)
+    {
+        Collider2D[] collider = Physics2D.OverlapCircleAll(pos, r, mask);
+        bool hasPlayer = false;
+        foreach (var c in collider)
+        {
+            if (c != null && c.CompareTag("Killer"))
             {
                 hasPlayer = true;
                 break;

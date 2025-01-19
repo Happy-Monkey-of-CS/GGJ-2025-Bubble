@@ -25,7 +25,7 @@ public class GradeController : MonoBehaviour
         int num = list.Count;
         for(int i = 0; i < num; i++){
             GameObject grade = GameObject.Instantiate(prefab) as GameObject;
-            grade.transform.parent = list_gameobject.transform;
+            grade.transform.SetParent (list_gameobject.transform);
         }
         // 需要添加新的记录
         if(PlayerPrefs.GetInt("New") == 1){

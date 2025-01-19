@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         {
             bubble_num++;
             GameObject bubble = GameObject.Instantiate(prefabs[index]) as GameObject;
-            bubble.transform.parent = bubbles.transform;
+            bubble.transform.SetParent( bubbles.transform);
             bubble.transform.position = GameObject.Find("Brith").gameObject.transform.position;
         }
     }
