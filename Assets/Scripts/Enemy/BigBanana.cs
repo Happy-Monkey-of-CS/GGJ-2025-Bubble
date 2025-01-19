@@ -11,7 +11,7 @@ public class BigBanana : DropEnemy
         Vector3 self=transform.position;
         target.z=0;
         self.z=0;
-        if((target-self).magnitude>10){
+        if((target-self).magnitude>15){
             Destroy(gameObject);
         }
     }

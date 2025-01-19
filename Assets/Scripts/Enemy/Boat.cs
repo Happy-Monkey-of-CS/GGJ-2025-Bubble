@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boat : Enemy
 {
-    Rigidbody2D rb2;
+    protected Rigidbody2D rb2;
     protected override void Awake()
     {
         base.Awake();
@@ -37,7 +37,7 @@ public class Boat : Enemy
         lastTime = Time.time;
     }
 
-    IEnumerator Force(Vector2 f, float t)
+    protected virtual IEnumerator Force(Vector2 f, float t)
     {
         int time = 0;
         while (time < 20)

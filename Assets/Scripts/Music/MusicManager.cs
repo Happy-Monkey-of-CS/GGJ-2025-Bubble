@@ -35,7 +35,7 @@ public class MusicManager : MonoBehaviour
             Music m = Instantiate(go, transform).GetComponent<Music>();
             m.gameObject.transform.localPosition = Vector3.zero;
             music = m;
-            music.OnBeat+=Onbeat;
+            music.OnBeat += Onbeat;
 
             OnChange?.Invoke(name);
         }
@@ -45,7 +45,8 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void Onbeat(){
+    void Onbeat()
+    {
         OnBeat?.Invoke();
     }
 
@@ -80,7 +81,7 @@ public class MusicManager : MonoBehaviour
         nowPlaying = StartMusicName;
     }
 
-    public string nowPlaying{get;private set;}= "";
+    public string nowPlaying { get; private set; } = "";
     int lastSecond = 0;
 
     private void Update()
@@ -91,12 +92,12 @@ public class MusicManager : MonoBehaviour
         }
         else
         {
-            if (music.audioSource.time >=10)
+            if (music.audioSource.time >= 10)
             {
                 if (lastSecond != Mathf.FloorToInt(music.audioSource.time))
                 {
                     lastSecond = Mathf.FloorToInt(music.audioSource.time);
-                    if (UnityEngine.Random.Range(0,1f) < 0.1f)
+                    if (UnityEngine.Random.Range(0, 1f) < 0.1f)
                     {
                         RandomMusic();
                     }
@@ -108,8 +109,21 @@ public class MusicManager : MonoBehaviour
     public void RandomMusic()
     {
         string n = GetRandomElement(musics);
-        while (n == nowPlaying)
+        bool same = true;
+        while (n == nowPlaying && same)
         {
+            string nameStart = n;
+            if (nameStart.Contains("_"))
+            {
+                nameStart = name.Split('_')[0];
+            }
+
+            if (nowPlaying.Contains(nameStart))
+            {
+                same=true;
+            }else{
+                same=false;
+            }
             n = GetRandomElement(musics);
         }
         SwitchTo(n);

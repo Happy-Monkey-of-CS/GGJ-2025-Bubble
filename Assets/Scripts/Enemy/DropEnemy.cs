@@ -36,7 +36,7 @@ public class DropEnemy : Enemy
     public float timmer = 0;
     protected override void Update()
     {
-        base.Update();
+        //base.Update();
         switch (state)
         {
             case State.waiting:

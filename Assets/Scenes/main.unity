@@ -1180,6 +1180,12 @@ MonoBehaviour:
     gameObject: {fileID: 2841209230969457368, guid: f6c9a42dbc519458394ba3f698f605fc, type: 3}
   - name: Robot
     gameObject: {fileID: 6836748587045094010, guid: a8b5d7ba42bead04784a60331b786acd, type: 3}
+  - name: Manbo_1
+    gameObject: {fileID: 7829534842126398991, guid: 71d022370d6504ccabe0f26733c9c5df, type: 3}
+  - name: Manbo_3
+    gameObject: {fileID: 7829534842126398991, guid: 71d022370d6504ccabe0f26733c9c5df, type: 3}
+  - name: Manbo_2
+    gameObject: {fileID: 7829534842126398991, guid: 71d022370d6504ccabe0f26733c9c5df, type: 3}
 --- !u!4 &735774395
 Transform:
   m_ObjectHideFlags: 0
@@ -6245,7 +6251,7 @@ MonoBehaviour:
   - BigBanana
   - NewYear_4
   - Robot
-  StartMusicName: Robot
+  StartMusicName: Manbo_1
 --- !u!210 &1086549037
 SortingGroup:
   m_ObjectHideFlags: 0

@@ -31,6 +31,13 @@ public class ChangeSprite : MonoBehaviour
             }
         }
     }
+
+
+    void OnDestroy()
+    {
+
+        MusicManager.Instance.OnChange -= Change;
+    }
 }
 
 [Serializable]

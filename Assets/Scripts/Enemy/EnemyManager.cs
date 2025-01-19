@@ -102,7 +102,7 @@ public class EnemyManager : MonoBehaviour
                 {
                     p = new Vector3(UnityEngine.Random.Range(-7f, 7f), UnityEngine.Random.Range(-4f, 4f));
                     hasPlayer = CheckPlayer(blockP + p, e.spawnR, mask);
-                    if (CheckEnemy(blockP + p, e.spawnR/2, mask))
+                    if (CheckEnemy(blockP + p, e.spawnR / 2, mask))
                     {
                         hasPlayer = true;
                     }
@@ -112,7 +112,7 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
-
+    string nowName = "None_1";
     void ChangeSpecial(string name)
     {
         foreach (var go in specialEnemies)
