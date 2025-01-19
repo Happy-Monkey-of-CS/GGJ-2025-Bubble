@@ -9,6 +9,8 @@ public class DropEnemy : Enemy
 
     public SpriteRenderer[] sprites;
 
+    public GameObject[] bubbles;
+
     protected override void Awake()
     {
         base.Awake();
@@ -64,6 +66,10 @@ public class DropEnemy : Enemy
                     foreach (var s in sprites)
                     {
                         s.color = new(1, 1, 1);
+                    }
+                    foreach (var g in bubbles)
+                    {
+                        g.SetActive(true);
                     }
                 }
                 break;
