@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 0
-  torque: 1
+  torque: 2
   spawnR: 1
   startSize: 0
   cs:
