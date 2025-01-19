@@ -1398,7 +1398,7 @@ MonoBehaviour:
   - BigBanana
   - NewYear_4
   - Robot
-  StartMusicName: APT_2
+  StartMusicName: Robot
 --- !u!210 &1086549037
 SortingGroup:
   m_ObjectHideFlags: 0
