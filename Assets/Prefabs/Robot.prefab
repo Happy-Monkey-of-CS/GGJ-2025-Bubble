@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1667251408694358311}
   - component: {fileID: 5099805853390794484}
   - component: {fileID: 565488272622714890}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Robot
-  m_TagString: Untagged
+  m_TagString: Killer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9283f1ffaf6404caa57f724933267a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 1
-  torque: 0.05
-  spawnR: 3
+  force: 3
+  torque: 2
+  spawnR: 1
 --- !u!50 &5099805853390794484
 Rigidbody2D:
   serializedVersion: 4
@@ -137,8 +137,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 10
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -180,10 +180,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.9125907, y: 0.96036863}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -194,5 +194,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.69, y: 14.51}
+  m_Size: {x: 7.7942433, y: 7.8031683}
   m_EdgeRadius: 0
