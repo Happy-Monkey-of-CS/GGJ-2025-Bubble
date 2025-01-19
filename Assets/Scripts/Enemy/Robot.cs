@@ -6,12 +6,15 @@ public class Robot : Enemy
 {
     Rigidbody2D rb2;
     Vector3 direction;
+
+    public Collider2D c;
     protected override void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
         transform.position = GetInitPosition();
         direction = Camera.main.transform.position - transform.position;
         direction.z = 0;
+        c.enabled=true;
     }
 
     protected override void FixedUpdate()
