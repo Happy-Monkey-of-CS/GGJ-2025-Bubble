@@ -1159,6 +1159,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 196209113}
   enemyBlockPrefabs:
+  - {fileID: 4468029107500657574, guid: 411ba8aff7b6c4d3fa1c012439cb3c6f, type: 3}
+  - {fileID: 4468029107500657574, guid: b0da8f87ad66a4d8999d50972814e3ee, type: 3}
+  - {fileID: 4468029107500657574, guid: b0da8f87ad66a4d8999d50972814e3ee, type: 3}
   - {fileID: 4468029107500657574, guid: b0da8f87ad66a4d8999d50972814e3ee, type: 3}
   specialRate: 5
   specialPair:

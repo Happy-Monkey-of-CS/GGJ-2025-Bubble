@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045637476112893898}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: -0.99564373, w: -0.09323945}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0, z: -0.97357893, w: -0.22835083}
+  m_LocalPosition: {x: -0.23, y: 0.46, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5069174079861524283}
   m_Father: {fileID: 3473878055387441129}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -190.7}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -206.4}
 --- !u!212 &1074889629407425964
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2cac4f5847c66644bb2696f0bbeedbf7, type: 3}
+  m_Sprite: {fileID: -1457509343, guid: c9b0e005379402143923268a7fbd5866, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 5573490357268879939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007, y: 0.135, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,7 +151,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.83
+  m_Radius: 0.8
 --- !u!1 &7829534842126398991
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 3468730116149162796}
   - component: {fileID: 5651003666473005185}
   - component: {fileID: -7419699940174264214}
+  - component: {fileID: 3738758430088092532}
   m_Layer: 6
   m_Name: Duck
   m_TagString: Untagged
@@ -242,6 +243,30 @@ SortingGroup:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &3738758430088092532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7829534842126398991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d493f8d3e227c4599956523cf183a060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  datas:
+  - name: NewYear
+    sprite: {fileID: -982573086, guid: 0436080fe3fc762458ea91c4c3b148d2, type: 3}
+  - name: APT
+    sprite: {fileID: -761257007, guid: bde9ce4352f689b45858a7db1269c736, type: 3}
+  - name: Manbo
+    sprite: {fileID: -1457509343, guid: c9b0e005379402143923268a7fbd5866, type: 3}
+  - name: BigBanana
+    sprite: {fileID: -1941371792, guid: c878ffe20cd6ee440962d5a501aefa89, type: 3}
+  - name: Robot
+    sprite: {fileID: 68869819, guid: 9f38983d0ede61c47a968150ac4a1614, type: 3}
+  spriteRenderer: {fileID: 1074889629407425964}
 --- !u!1 &8420344233058222018
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,13 +292,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8420344233058222018}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.15384822, w: 0.9880945}
+  m_LocalPosition: {x: -0.33, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3568113984273756716}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 17.7}
 --- !u!60 &6464607430179242668
 PolygonCollider2D:
   m_ObjectHideFlags: 0
