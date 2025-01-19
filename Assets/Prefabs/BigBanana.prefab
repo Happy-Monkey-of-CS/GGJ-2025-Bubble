@@ -399,6 +399,8 @@ MonoBehaviour:
   - {fileID: 3628159545458956171}
   sprites:
   - {fileID: 1245111262942808264}
+  bubbles:
+  - {fileID: 7657297315656715449}
   timmer: -1
 --- !u!1 &6522625263329310964
 GameObject:
@@ -502,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2631066847537781436
 Transform:
   m_ObjectHideFlags: 0
