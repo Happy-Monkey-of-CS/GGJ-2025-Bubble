@@ -51,20 +51,12 @@ public class GradeController : MonoBehaviour
             child.gameObject.transform.Find("Name").GetComponent<Text>().text = list.ElementAt(num - 1 - index).Value;
             child.gameObject.transform.Find("Time").GetComponent<Text>().text = time.ToString("F2") + " 秒";
             // 等级评价
-            child.gameObject.transform.Find("Text").GetComponent<Text>().text = time > 60 ? "非常牛逼" :
-                                                                                time > 30 ? "比较牛逼" : 
-                                                                                "不太牛逼";
+            child.gameObject.transform.Find("Text").GetComponent<Text>().text = time > 60 ? "非常牛" :
+                                                                                time > 30 ? "比较牛" : 
+                                                                                "不太牛";
             // 第一名
             if(index == 0){
-                child.gameObject.GetComponent<Image>().color = new Color(0.96f, 0.87f, 0.32f, 1);  // 242 219 87
-            }
-            // 第二名
-            if(index == 1){
-                child.gameObject.GetComponent<Image>().color = new Color(0.73f, 0.73f, 0.73f, 1);
-            }
-            // 第三名
-            if(index == 2){
-                child.gameObject.GetComponent<Image>().color = new Color(0.76f, 0.68f, 0.4f, 1);   // 191 171 102
+                child.gameObject.GetComponent<Image>().color = new Color(1.0f, 0.878f, 0.137f, 1);  // 255 224 35
             }
             index++;
         }
