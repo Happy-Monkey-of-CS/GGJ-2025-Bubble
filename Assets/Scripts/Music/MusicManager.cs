@@ -110,21 +110,21 @@ public class MusicManager : MonoBehaviour
     {
         string n = GetRandomElement(musics);
         bool same = true;
-        while (n == nowPlaying && same)
+        while (same)
         {
+            n = GetRandomElement(musics);
             string nameStart = n;
             if (nameStart.Contains("_"))
             {
                 nameStart = name.Split('_')[0];
             }
 
-            if (nowPlaying.Contains(nameStart))
+            if (nowPlaying.Contains(nameStart)||n == nowPlaying)
             {
                 same=true;
             }else{
                 same=false;
             }
-            n = GetRandomElement(musics);
         }
         SwitchTo(n);
         nowPlaying = n;
