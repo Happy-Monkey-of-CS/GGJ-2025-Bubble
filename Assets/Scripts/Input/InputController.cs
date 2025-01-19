@@ -9,9 +9,9 @@ public class InputController : MonoBehaviour
     public InputField input;
 
     public void ClickButton(){
-        if(input.text != null){
-            PlayerPrefs.SetString("Name", input.text);
-            SceneManager.LoadScene("main");
-        }
+        // 默认名字为刘德华
+        string name = input.text != null ? input.text : "刘德华";
+        PlayerPrefs.SetString("Name", name);
+        SceneManager.LoadScene("main");
     }
 }
